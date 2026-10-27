@@ -1,0 +1,45 @@
+[
+  {
+    "id": "paper-sample-01",
+    "paperNumber": 1,
+    "title": "Attention Is All You Need",
+    "authors": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, Illia Polosukhin",
+    "fileName": "attention-is-all-you-need-sample.pdf",
+    "fileHash": "sha256-sample-attention-hash-01",
+    "fileSizeBytes": 2214300,
+    "pageCount": 15,
+    "createdAt": "2026-10-27T09:01:51.513Z",
+    "status": "confirmed",
+    "notes": "Demonstration paper showing exact 8-sector extraction layout",
+    "extractedSectors": {
+      "researchProblem": "Dominant sequence transduction models (RNNs, LSTMs, and GRUs) inherently compute sequentially along the symbol positions of input and output sequences. This inherent sequential nature precludes parallelization within training examples, becoming critical at longer sequence lengths where memory constraints limit batching across examples.",
+      "researchObjective": "To eschew recurrence and convolutions entirely and propose a novel network architecture called the Transformer, based solely on attention mechanisms to draw global dependencies between input and output representations.",
+      "researchQuestions": "[Inferred] Can sequence transduction models achieve state-of-the-art translation quality without recurrent or convolutional neural network layers? [Inferred] Does relying entirely on multi-head self-attention significantly improve training parallelization and reduce training time?",
+      "methodology": "The authors designed the Transformer model using stacked self-attention and point-wise, fully connected layers for both encoder and decoder. Key components include Scaled Dot-Product Attention, Multi-Head Attention (with 8 parallel attention heads), Sinusoidal Positional Encodings to preserve token order, and residual connections with layer normalization around each sub-layer. Training used the Adam optimizer with scheduled learning rate warmup and label smoothing (0.1).",
+      "datasetParticipants": "Evaluated on two benchmark machine translation datasets: WMT 2014 English-to-German (consisting of about 4.5 million sentence pairs) and WMT 2014 English-to-French (consisting of 36 million sentence pairs). Byte-Pair Encoding (BPE) was used with shared vocabularies of approximately 37,000 and 32,000 tokens respectively.",
+      "findings": "On the WMT 2014 English-to-German task, the Transformer (big) established a new state-of-the-art BLEU score of 28.4, improving by over 2.0 BLEU points over previous leading models including ensembles. On WMT 2014 English-to-French, it achieved 41.8 BLEU with a training cost of 3.5 days on 8 P100 GPUs (a fraction of prior computational costs).",
+      "limitations": "Authors acknowledged that computational complexity of self-attention per layer is O(n² · d) with respect to sequence length n, which becomes memory-intensive for extremely long sequence contexts. The model also requires fixed positional encodings rather than learned dynamic recurrence.",
+      "futureWorks": "Authors planned to extend the Transformer to problems involving input and output modalities other than text (such as images, audio, and video), investigate local, restricted attention mechanisms to handle very large inputs efficiently, and explore less sequential generation schemes for the decoder."
+    }
+  },
+  {
+    "id": "paper-1793091787057-qmf8l",
+    "title": "Deep Residual Learning for Image Recognition",
+    "authors": "Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun",
+    "fileName": "resnet_test.pdf",
+    "extractedSectors": {
+      "researchProblem": "When deeper networks start converging, degradation problem occurs: accuracy gets saturated and degrades rapidly.",
+      "researchObjective": "Overcome degradation and enable training of networks with 100+ layers.",
+      "researchQuestions": "[Inferred] Can residual mappings enable effective optimization of extremely deep neural networks?",
+      "methodology": "Residual mapping F(x) = H(x) - x with identity shortcut connections.",
+      "datasetParticipants": "ImageNet 2012 classification (1.28M train, 50k val) and CIFAR-10.",
+      "findings": "ResNet-152 won 1st place in ILSVRC 2015 with 3.57% top-5 error on ImageNet. Solves optimization degradation.",
+      "limitations": "Over 1000 layers (1202 layers) had 7.93% error on CIFAR-10 due to overfitting.",
+      "futureWorks": "Apply to object detection, segmentation, and sequence domains."
+    },
+    "pageCount": 1,
+    "createdAt": "2026-10-27T09:03:07.057Z",
+    "status": "confirmed",
+    "paperNumber": 2
+  }
+]

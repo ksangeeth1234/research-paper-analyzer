@@ -1,0 +1,6 @@
+{
+  "name": "Research Paper Analysis & Excel Export System",
+  "description": "Upload academic research papers (PDF), extract 8 standardized research sectors with Gemini AI, edit and review summaries, and export consolidated professional multi-paper Excel workbooks.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
